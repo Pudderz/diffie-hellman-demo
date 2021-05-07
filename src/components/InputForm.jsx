@@ -1,33 +1,53 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export const InputForm = ({changeData}) => {
+export const InputForm = ({ changeData }) => {
   const { register, handleSubmit } = useForm();
 
-
-  const onSubmit = (data) =>{
+  const onSubmit = (data) => {
     console.log(data);
     changeData(data);
-  }
+  };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} >
-      <p>Public Variables</p>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ margin: "auto", textAlign: "start", padding: "20px" }}
+    >
+      <h5>Private Variables:</h5>
+      <p>
+        These are variables that the client and the server will not share and
+        keep secret
+      </p>
       <p>
         Client Private Variable:{" "}
-        <input {...register("clientPrivate")} type="number" name="clientPrivate" required/>
+        <input
+          {...register("clientPrivate")}
+          type="number"
+          name="clientPrivate"
+          required
+        />
       </p>
       <p>
-        Server Private Variable:{" "}  
-        <input {...register("serverPrivate")} type="number" name="serverPrivate" required/>
+        Server Private Variable:{" "}
+        <input
+          {...register("serverPrivate")}
+          type="number"
+          name="serverPrivate"
+          required
+        />
       </p>
 
-      <p>Public Variables</p>
+      <h5>Public Variables</h5>
       <p>
-        G:
-        <input {...register("publicG")} type="number" name="publicG" required/>
+        These are pre-decided variables that the server and the client agree on
       </p>
       <p>
-        N: <input {...register("publicN")} type="number" name="publicN" required/>
+        G:{" "}
+        <input {...register("publicG")} type="number" name="publicG" required />
+      </p>
+      <p>
+        N:{" "}
+        <input {...register("publicN")} type="number" name="publicN" required />
       </p>
       <button type="submit">Submit</button>
     </form>
