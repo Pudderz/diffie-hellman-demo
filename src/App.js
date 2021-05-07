@@ -1,4 +1,3 @@
-import "./App.css";
 import InputForm from "./components/InputForm";
 import React, { useState } from "react";
 import ShowDiffie from "./components/ShowDiffie";
