@@ -3,7 +3,7 @@ import InputForm from "./components/InputForm";
 import React, { useState } from "react";
 import ShowDiffie from "./components/ShowDiffie";
 function App() {
-  const [variables, setVariables] = useState({});
+  const [variables, setVariables] = useState(false);
   const handleChange = (data) => {
     console.log("data is changing")
     setVariables(data);
